@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useStoreContext } from "../../utils/GlobalState"
 
 const CreatePostForm = () => {
+
+  const inputRef = useRef();
+  const [, dispatch] = useStoreContext();
+
   const handleSubmit = e => {
     e.preventDefault();
+    dispatch({
+      type: "add",
+      name: inputRef.current.value
+    });
+    inputRef.current.value = "";
   };
 
   return (
