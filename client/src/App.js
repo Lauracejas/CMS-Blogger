@@ -9,6 +9,7 @@ import FavoritesList from "./pages/FavoritesList";
 function App() {
   return (
     <Router>
+     <StoreProvider >
       <div>
         <Nav />
         <Switch>
@@ -19,6 +20,7 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
       </div>
+      </StoreProvider>
     </Router>
   );
 }
